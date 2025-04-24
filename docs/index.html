@@ -84,6 +84,22 @@
         .copy-btn:active {
             background: #3467b3;
         }
+        .note-box {
+            background: #f0f0f3;
+            color: #222;
+            border-radius: 7px;
+            padding: 18px 20px;
+            margin: 24px 0 0 0;
+            width: 90%;
+            font-size: 1em;
+            box-sizing: border-box;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+        }
+        .note-title {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 6px;
+        }
         @media (max-width: 800px) {
             .centered-box {
                 min-width: unset;
@@ -123,9 +139,16 @@
             STEAM_COMPAT_CLIENT_INSTALL_PATH=~/.local/share/Steam STEAM_COMPAT_DATA_PATH=~/.steam/steam/steamapps/compatdata/ID/ WINEPREFIX=~/.steam/steam/steamapps/compatdata/ID/pfx/ ~/.steam/steam/steamapps/common/Proton\ Hotfix/files/bin/wine64 winecfg
             <button class="copy-btn" onclick="copyToClipboard('code1')">Copiar</button>
         </div>
+        <div class="note-box">
+            <span class="note-title">NOTA</span>
+            Substitua <b>ID</b> pelo número apropriado. Para descobrir qual o número, veja qual o diretório mais novo da pasta:
+            <div class="code-block" id="code5">
+                ~/.steam/steam/steamapps/compatdata/
+                <button class="copy-btn" onclick="copyToClipboard('code5')">Copiar</button>
+            </div>
+        </div>
         <p>
-            Abrirá uma janela onde deverá alterar o modo de compatibilidade para <b>Windows 7</b>.<br>
-            <strong>NOTA:</strong> Substitua <b>ID</b> pelo número apropriado. Para descobrir qual o número, veja qual o diretório mais novo da pasta:
+            Abrirá uma janela onde deverá alterar o modo de compatibilidade para <b>Windows 7</b>.
         </p>
         <div class="code-block" id="code2">
             ~/.steam/steam/steamapps/compatdata/
@@ -146,9 +169,14 @@
             ~/.steam/steam/steamapps/compatdata/ID/
             <button class="copy-btn" onclick="copyToClipboard('code4')">Copiar</button>
         </div>
-        <p>
-            <strong>NOTA:</strong> Substitua <b>ID</b> pelo número apropriado. Para descobrir qual o número, veja qual o diretório mais novo da pasta:
-        </p>
+        <div class="note-box">
+            <span class="note-title">NOTA</span>
+            Substitua <b>ID</b> pelo número apropriado. Para descobrir qual o número, veja qual o diretório mais novo da pasta:
+            <div class="code-block" id="code5">
+                ~/.steam/steam/steamapps/compatdata/
+                <button class="copy-btn" onclick="copyToClipboard('code5')">Copiar</button>
+            </div>
+        </div>
         <div class="code-block" id="code5">
             ~/.steam/steam/steamapps/compatdata/
             <button class="copy-btn" onclick="copyToClipboard('code5')">Copiar</button>
