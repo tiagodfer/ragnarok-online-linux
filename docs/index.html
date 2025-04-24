@@ -50,6 +50,29 @@
             <li>Steam;</li>
             <li>Instalador do ROLATAM.</li>
         </ul>
+        <h2>Adicionando o instalador à biblioteca</h2>
+        <p>
+            Clique em "Adicionar Jogo" e em seguida em "Adicionar um jogo não Steam...". Abrirá uma janela onde deverás clicar em "Explorar" e navegar até o local onde o instalador foi baixado. Após adicioná-lo, ele estará na tua lista de jogos Steam.
+        </p>
+        <h2>Ativando a compatibilidade</h2>
+        <p>
+            Com o jogo na sua biblioteca, clique com o botão direito e em seguida em "Propriedades", na aba "Compatibilidade" marque a opção "Forçar o uso de ferramenta de compatibilidade do Steam Play específica", na caixa de seleção clique em Proton Hotfix.
+        </p>
+        <h2>Instalando o jogo</h2>
+        <p>
+            Execute o instalador e siga os passos na tela.
+        </p>
+        <h2>Alterando a compatibilidade para Windows 7</h2>
+        <p>
+            Abra o terminal e cole o código entre as aspas: "STEAM_COMPAT_CLIENT_INSTALL_PATH=~/.local/share/Steam STEAM_COMPAT_DATA_PATH=~/.steam/steam/steamapps/compatdata/ID/ WINEPREFIX=~/.steam/steam/steamapps/compatdata/ID/pfx/ ~/.steam/steam/steamapps/common/Proton\ Hotfix/files/bin/wine64 winecfg", abrirá uma janela onde deverá alterar o modo de compatibilidade para Windows 7.
+            NOTA: Substitua ID pelo número apropriado, para descobrir qual o número, veja qual o diretório mais novo da pasta ~/.steam/steam/steamapps/compatdata/.
+        </p>
+        <h2>Alterando o destino</h2>
+        <p>
+            Vá novamente nas proriedades do jogo em sua biblioteca, no campo "Destino", troque por "~/.steam/steam/steamapps/compatdata/ID/pfx/drive_c/Gravity/Ragnarok/Ragnarok.exe" e no campo Iniciar Em, troque por "~/.steam/steam/steamapps/compatdata/ID/".
+            NOTA: Substitua ID pelo número apropriado, para descobrir qual o número, veja qual o diretório mais novo da pasta ~/.steam/steam/steamapps/compatdata/.
+        </p>
+        <h2>Jogar!</h2>
     </div>
 </body>
 </html>
