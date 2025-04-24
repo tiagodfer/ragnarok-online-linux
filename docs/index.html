@@ -7,33 +7,35 @@
         body {
             background-color: #f5f5f5;
             margin: 0;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
         }
         .centered-box {
             background: #fff;
-            padding: 40px 32px;
+            padding: 40px 40px;
             border-radius: 12px;
             box-shadow: 0 4px 24px rgba(0,0,0,0.08);
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-width: 350px;
+            min-width: 420px;
             max-width: 700px;
             width: 100%;
             box-sizing: border-box;
+            margin-top: 48px;
+            margin-bottom: 48px;
         }
         h1 {
-            margin: 0;
+            margin: 0 0 18px 0;
             font-size: 1.4em;
             color: #222;
             text-align: center;
         }
         h2 {
-            margin-top: 32px;
-            margin-bottom: 12px;
+            margin-top: 28px;
+            margin-bottom: 10px;
             font-size: 1.1em;
             color: #444;
             text-align: center;
@@ -42,6 +44,7 @@
             list-style: disc;
             padding-left: 20px;
             text-align: left;
+            margin-bottom: 10px;
         }
         p {
             margin: 0 0 12px 0;
@@ -56,14 +59,17 @@
             font-size: 0.98em;
             border-radius: 6px;
             padding: 14px 48px 14px 16px;
-            margin: 10px 0 16px 0;
-            width: 100%;
+            margin: 14px 0 20px 0;
+            width: 92%;
             position: relative;
             word-break: break-all;
+            box-sizing: border-box;
+            display: flex;
+            align-items: flex-start;
         }
         .copy-btn {
             position: absolute;
-            top: 8px;
+            top: 10px;
             right: 12px;
             background: #4f8cff;
             color: #fff;
@@ -73,9 +79,22 @@
             font-size: 0.85em;
             cursor: pointer;
             transition: background 0.2s;
+            z-index: 2;
         }
         .copy-btn:active {
             background: #3467b3;
+        }
+        @media (max-width: 800px) {
+            .centered-box {
+                min-width: unset;
+                max-width: 98vw;
+                padding: 18px 4vw;
+            }
+            .code-block {
+                width: 98%;
+                font-size: 0.93em;
+                padding-right: 44px;
+            }
         }
     </style>
 </head>
@@ -89,26 +108,23 @@
         </ul>
         <h2>Adicionando o instalador à biblioteca</h2>
         <p>
-            Clique em "Adicionar Jogo" e em seguida em "Adicionar um jogo não Steam...". Abrirá uma janela onde deverás clicar em "Explorar" e navegar até o local onde o instalador foi baixado. Após adicioná-lo, ele estará na tua lista de jogos Steam.
+            Clique em <b>Adicionar Jogo</b> e em seguida em <b>Adicionar um jogo não Steam...</b>. Abrirá uma janela onde deverás clicar em <b>Explorar</b> e navegar até o local onde o instalador foi baixado. Após adicioná-lo, ele estará na tua lista de jogos Steam.
         </p>
         <h2>Ativando a compatibilidade</h2>
         <p>
-            Com o jogo na sua biblioteca, clique com o botão direito e em seguida em "Propriedades", na aba "Compatibilidade" marque a opção "Forçar o uso de ferramenta de compatibilidade do Steam Play específica", na caixa de seleção clique em Proton Hotfix.
+            Com o jogo na sua biblioteca, clique com o botão direito e em seguida em <b>Propriedades</b>, na aba <b>Compatibilidade</b> marque a opção <b>Forçar o uso de ferramenta de compatibilidade do Steam Play específica</b>, na caixa de seleção clique em <b>Proton Hotfix</b>.
         </p>
         <h2>Instalando o jogo</h2>
         <p>
             Execute o instalador e siga os passos na tela.
         </p>
         <h2>Alterando a compatibilidade para Windows 7</h2>
-        <p>
-            Abra o terminal e cole o código:
-        </p>
         <div class="code-block" id="code1">
             STEAM_COMPAT_CLIENT_INSTALL_PATH=~/.local/share/Steam STEAM_COMPAT_DATA_PATH=~/.steam/steam/steamapps/compatdata/ID/ WINEPREFIX=~/.steam/steam/steamapps/compatdata/ID/pfx/ ~/.steam/steam/steamapps/common/Proton\ Hotfix/files/bin/wine64 winecfg
             <button class="copy-btn" onclick="copyToClipboard('code1')">Copiar</button>
         </div>
         <p>
-            Abrirá uma janela onde deverá alterar o modo de compatibilidade para Windows 7.<br>
+            Abrirá uma janela onde deverá alterar o modo de compatibilidade para <b>Windows 7</b>.<br>
             <strong>NOTA:</strong> Substitua <b>ID</b> pelo número apropriado. Para descobrir qual o número, veja qual o diretório mais novo da pasta:
         </p>
         <div class="code-block" id="code2">
@@ -117,14 +133,14 @@
         </div>
         <h2>Alterando o destino</h2>
         <p>
-            Vá novamente nas propriedades do jogo em sua biblioteca, no campo "Destino", troque por:
+            Vá novamente nas propriedades do jogo em sua biblioteca, no campo <b>Destino</b>, troque por:
         </p>
         <div class="code-block" id="code3">
             ~/.steam/steam/steamapps/compatdata/ID/pfx/drive_c/Gravity/Ragnarok/Ragnarok.exe
             <button class="copy-btn" onclick="copyToClipboard('code3')">Copiar</button>
         </div>
         <p>
-            e no campo "Iniciar Em", troque por:
+            e no campo <b>Iniciar Em</b>, troque por:
         </p>
         <div class="code-block" id="code4">
             ~/.steam/steam/steamapps/compatdata/ID/
@@ -137,7 +153,7 @@
             ~/.steam/steam/steamapps/compatdata/
             <button class="copy-btn" onclick="copyToClipboard('code5')">Copiar</button>
         </div>
-        <h2>Jogar!</h2>
+        <h2><b>Jogar!</b></h2>
     </div>
     <script>
         function copyToClipboard(elementId) {
